@@ -12,7 +12,7 @@
   <div class="header"><center>DIARY OF A MAN NAMED<br> EMILIO</center></div>
 
   <div class="menu" align="right"><br>
-    <center><table>
+    <center><table class="tablemenu">
       <tr>
           <td class="menu-home"><a href="./index.html">.HOME</a></td>
           <td class="menu-aboutme"><a href="#aboutme">.ABOUT ME</a></td>
@@ -24,8 +24,8 @@
   </div>
 
   <div class="sidebar"><br>
-    <center><img style="height:auto; width:auto; max-width:225px; max-height:225px;" src="temp-picture.png" /><br></center>
     <a name="aboutme">
+    <center><img style="height:auto; width:auto; max-width:225px; max-height:225px;" src="temp-picture.png" /><br></center>
     <p class="blog-text"><u><font size="2px">About Me:</u></font></a><br>
     <font size="1px">Hello friend! My name is Emilio and you are currently viewing my blog. I am fairly new to the world of web development, but am quite excited to expand my ever-growing knowledge of the subject. I graduated from UC Irvine with a degree in biology, and up until recently, have had to intention to work somewhere in healthcare. However, after working several years in emergency department, I have decided that being a healthcare provider is not my dream anymore. I turned to coding after our ED switched from a bland electronic medical record into something much more customizable, called EPIC&copy;<br>
     Since then I have tried many tutorials, and am currently enrolled in Devbootcamp's programs in San Francisco, CA! Go Grasshoppers!<br>
@@ -45,10 +45,45 @@
 
   <div class="blog">
 <font size ="14px"><strength>.BLOG<a name="BLOG"></a></strength><br></font>
-  <br>
-  <br>
   <font size ="3px">PREVIOUS .BLOGs<br></font>
-    <font size="1px"><a href="#chefskitchen">Chefs Kitchen(5/3/15)</a>     <a href="#gitblog">Git Blog(5/3/15)</a></font>
+<table class="tablelinks">
+    <font size="1px">
+
+      <tr>
+        <td><font size="1px"><a href="#cssdesign">CSS DESIGN: POSITIONING (5/10/15)</a></font></td> <td><font size="1px"><a href="#chefskitchen">CHEFS KITCHEN(5/3/15)</a></font></td>    <td><font size="1px"><a href="#gitblog">GIT BLOG(5/3/15)</a></font></td>
+      </tr>
+
+
+    </font>
+
+</table>
+  <br>
+  <br>
+  <br>
+
+  <font size="6px"><a name="cssdesign">CSS DESIGN: POSITIONING</font><br>
+  <font size="5px"><em>SUNDAY</em></font><BR> <font size ="3px">5/10/2015<br></font>
+  <p class="blog-text">
+    What is the difference between <strong>absolute</strong>, <strong>relative</strong>, and <strong>fixed positioning</strong>? <br>
+    <ul>
+      <li><u>Absolute</u><br>
+        <p class="blog-text">
+        This type of positioning allows one to place any page element exactly where you want it. The positioning attributes you would want to use are <em> top, left, bottom and right</em> Theses values will be relative to the next parent with relative or absolute positiong. If there isn't a parent, then the object you are trying to postion will be relative to the <code>html</code> tag.</p>
+      </li>
+      <br>
+      <li><u>Relative</u><br>
+        <p class="blog-text">
+        Apparently, this type of positioning is the most confusing. From my understanding, this type will position itself in relativing to where it would be if you do not add any attributes. The attributes you will use are like absolute:<br>
+        <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code>. <br></li><p>
+
+      <li><u>Fixed</u><br>
+        <p class="blog-text">
+          With fixed positioning, elements are completely indepdent of everything else on teh web page. Regardless of any parents, a fixed position element will always be positioned base on the browswer window. This is the fixed scroller that people see on some pages.<br></li><p>
+
+    </ul>
+  </p>
+
+  <br>
   <br>
   <br>
   <br>

@@ -2,8 +2,13 @@ body {
   font-family:futura;
 }
 
-table{
+.tablemenu{
   text-align:center;
+  width:100%;
+}
+
+.tablelinks{
+  text-align: center;
   width:100%;
 }
 
