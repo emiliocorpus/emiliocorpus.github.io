@@ -62,13 +62,15 @@ border:3px solid #E5F2F9;
 }
 
 
-.footer{
-background-color: #CCFFD9;
-position: relative;
-height: 55px;
-width:100%;
-bottom:-0.5em;
-font-size:10px;
+.footer {
+  position: relative;
+  height:50px;
+  width:95%;
+  text-align:left;
+  font-size: 10px;
+  background-color:#C3E2CE;
+  border:2px solid #2B604F;
+  color: black;
 }
 
 code{

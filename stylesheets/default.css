@@ -46,12 +46,16 @@ border:5px solid #2B604F;
   padding-right:10px;
 }
 
+
 .footer {
-    background-color:#C3E2CE;
-    color:black;
-    clear:both;
-    margin:-0.5em;
-    border:2px solid #2B604F;
+  position: relative;
+  height:50px;
+  width:100%;
+  text-align:left;
+  font-size: 10px;
+  background-color:#C3E2CE;
+  border:2px solid #2B604F;
+  color: black;
 }
 
 .menu{
@@ -63,6 +67,9 @@ height: 55px;
 text-align:center;
 border:2px solid #2B604F;
 }
+
+
+
 
 .tablemenu{
   text-align:center;
