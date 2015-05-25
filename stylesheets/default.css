@@ -1,7 +1,7 @@
 .header {
     background-color:#C3E2CE;
     width:100%;
-    font-family: futura;
+    font-family: Lucida;
     font-size: 50px;
     color:black;
     text-align:center;
@@ -21,9 +21,10 @@ border:5px solid #2B604F;
 }
 
 .currentquote{
-  font-family:apple-chancery;
+  font-family:Lucida;
   font-size:40px;
   text-align:left;
+  color:#3990a9;
 }
 
 .currentquote p{
@@ -33,11 +34,13 @@ border:5px solid #2B604F;
 }
 
 .aboutme{
-  background-color:#E5F2F9;
-  color:#3930EF;
-  border:2px solid #3930EF;
+background-color:#E5F2F9;
+  color:#424242;
+  border:2px solid #D8D8D8;
   padding-left:10px;
   padding-right:10px;
+  padding-bottom:15px;
+  font-family:Lucida;
 }
 .blog-text{
   background-color:#E5F2F9;
@@ -46,8 +49,10 @@ border:5px solid #2B604F;
   padding-left:10px;
   padding-right:10px;
   padding-bottom:15px;
-  font-family:"Helvetica Neue";
+  font-family:Lucida;;
 }
+
+
 
 .blog{
   background-color:#E5F2F9;
@@ -57,8 +62,7 @@ border:5px solid #2B604F;
   padding-right:10px;
   padding-bottom:15px;
   width:80%;
-
-  font-family:"Helvetica Neue";
+  font-family:Lucida;
 }
 
 
