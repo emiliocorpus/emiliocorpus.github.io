@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EMILIO</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <!--In the CSS challenge you will need to link
+  to the CSS stylesheet.
+  The link has been left blank for now -->
+</head>
+<body background="../golden_gate_bridge.jpg">
+  <div class="header"><center>DIARY OF A MAN NAMED<br> EMILIO</center></div>
+  <div class="menu" align="right"><br>
+    <center><table class="tablemenu">
+      <tr>
+         <td class="menu-home"><a href="../index.html">.HOME</a></td>
+          <td class="menu-aboutme"><a href="../aboutme.html">.ABOUT ME</a></td>
+          <td class="menu-blog"><a href="blog.html">.BLOG</a></td>
+          <td class="menu-portfolio"><a href="#URLTOPORTFOLIO">.PORTFOLIO</a></td>
+          <td class="menu-credits"><a href="#URLTOCREDITS">.CREDITS</a></td>
+      </tr>
+    </table></center>
+  </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="aboutme"><br>
+    <p class="about-text">
+    <br>
+    <font size="8px">BLOG #6:Enumerable Methods, #map</font></a><br>
+    <font size="6px">SUNDAY, 5/24/2015</font>
+    <br><br>
+    <font size="3px">
+      If you are like me, someone relatively new to Ruby (yet alone the coding world), there is a lot to take in. Having recently started DevBootcamp, I have been presented many challenges and exercises regarding strings, arrays and most recently hashes. Over the last few weeks I have gotten more familiar with these types of objects, and I now have a steady foundation of knowledge on collections. However, any foundation can be fortified, and today we will go through Enumerables and specifically look at one method called #map.<br><br>
+      <b>Enumerable</b> is a module. It offers a large collection of methods that are quite helpful in handling data collections, like <code>Hash</code> and <code>Array</code>. Say you have the following:
+      <br><br>
+      <code>
+        array_of_test_scores = [45,32,15,19,21,45,42,35,34,12]
+      </code>
+      <br><br>
+      Like the variable name states, this is array of test scores. Let's say the test scores are out of 50, and each score in the array represents a student. The teacher is feeling pretty friendly today and wants to give all her students an extra point on the test. How can we change the scores without having to redefine the array? <br><br>
+      If you guessed the <code>Enumerable#map</code>, then give yourself a pat on the back! So here is what the code would look like if we wanted to add 1 to everyone's score.<br><br>
+
+      <code>
+        array_of_test_scores.map{|x|x+1}<br>
+        => [46,33,16,20,22,46,43,36,35,13]
+      </code><br><br>
+
+      As you can see, we call the method <code>.map</code> with a code block within the following {}. What <code>.map</code> does is it goes through each item in the array, and executes the code that you give it. The <code>|x|</code> in the block represents each item, and the following function <code>x + 1</code> is executed for each item. This tranforms our array! But if we were to call the array and <code>print</code> or <code>p</code> it, we would see our original inputs, that is the scores before adding 1. <br><br>Why is this? Well, this is because we called the non-destructive version of <code>.map</code>, which actually preserves our original array. If we were to make it destructive, that is transform/change the original array, it is simple, we add a <code>!</code> to the end of the call like this:
+      <br><br>
+      <code>
+        array_of_test_scores.map!{|x|x+1}<br>
+        => [46,33,16,20,22,46,43,36,35,13]
+      </code><br><br>
+      So when we <code>print</code> or <code>p</code> like this:
+      <br><br>
+      <code>p array_of_test_scores</code><br><br>
+      The output on the console would show:<br><br>
+      <code>
+      => [46,33,,20,22,46,43,36,35,13]<br>
+      </code><br>
+      our new scores!<br><br>
+      This method makes our lives so much easier in terms of manipulating different data collections! This is all thanks to the module Enumerable! Here is a link to <a href='http://ruby-doc.org/core-2.2.0/Enumerable.html'>Enumerables</a>. There you will find all other Enumerable methods. I recommend looking at the the <code>.each</code> method, which is actually quite integral in the defining proceses of all other Enumerable methods. <code>.each</code> is what made <code>.map</code> go through every item in the object!
+    </font>
+
+    </p>
+</div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <!-- <div class="footer"><br>Links to social media here</div> -->
+
+</body>
