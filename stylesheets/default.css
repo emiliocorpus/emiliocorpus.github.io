@@ -10,11 +10,12 @@ border:2px solid #2B604F;
 }
 
 body {
-  font-family:palantino;
+  font-family:Lucida;
   color:#E5820C;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
 img{
 border:5px solid #2B604F;
 }
@@ -26,7 +27,7 @@ border:5px solid #2B604F;
 }
 
 .currentquote p{
-  font-family:apple-chancery;
+
   font-size:40px;
   text-align:right;
 }
@@ -40,10 +41,24 @@ border:5px solid #2B604F;
 }
 .blog-text{
   background-color:#E5F2F9;
-  color:#3930EF;
-  border:2px solid #3930EF;
+  color:#424242;
+  border:2px solid #D8D8D8;
   padding-left:10px;
   padding-right:10px;
+  padding-bottom:15px;
+  font-family:"Helvetica Neue";
+}
+
+.blog{
+  background-color:#E5F2F9;
+  color:#424245;
+  border:2px solid #D8D8D8;
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom:15px;
+  width:80%;
+
+  font-family:"Helvetica Neue";
 }
 
 
