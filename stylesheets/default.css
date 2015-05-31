@@ -65,11 +65,32 @@ background-color:#E5F2F9;
   font-family:Lucida;
 }
 
+.portfolio{
+ background-color:#E5F2F9;
+  color:#424242;
+  border:2px solid #D8D8D8;
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom:15px;
+  font-family:Lucida;;
+}
+
+.credits{
+ background-color:#E5F2F9;
+  color:#424242;
+  border:2px solid #D8D8D8;
+  padding-left:10px;
+  padding-right:10px;
+  padding-bottom:15px;
+  font-family:Lucida;;
+}
 
 .footer {
-  position: relative;
-  height:50px;
-  width:100%;
+  position:fixed;
+  bottom:0em;
+  left:0em;
+  right:0em;
+  height:40px;
   text-align:left;
   font-size: 10px;
   background-color:#C3E2CE;
