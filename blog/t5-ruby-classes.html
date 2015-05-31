@@ -36,21 +36,168 @@
     <font size="6px">Sunday, 5/31/2015</font>
     <br>
     <font size="3px">
-      Text here. text here. text here
+      I am currently at the very beginning of my programming journey and there is a lot of information I have taken in so far. I have been endowed the ability to create arrays, strings and hashes, as well as the ability to edit them down the road. I thought these concepts were super cool until I recently experienced <b>Classes</b>, which has given me even more power in accessing, creating, or editing certain objects!
+      <br>
+      <br>
+      I think the best way to really explain <b>Classes</b> is by example. I am a 20-odd year old male who has so many favorite things in this world that I cannot keep track. Let's create a class that can build a collection of my favorite things!
+      <br><br>
+    <div class ="block">
+          <code>
+          class Favorites<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def initialize<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items = {}<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def favorite_items<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def add_fav (category,item)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items[category] = item<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          end
+          </code>
+    </div>
+          <br>
+          <br>
+          I have just created a class, albeit, a simple one! Can you guess it's functionality? Lets take it step by step, unwrapping the code from the outside going inwards!
+          <br><br>
+    <div class ="block">
+          <code>
+          class Favorites<br><br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em># Some code in here</em>
+          <br><br><br>
+          end
+          </code>
+    </div><br><br>
+          The outer part of this code is actually creating a class called Favorites. If we were to call declare a new variable <code>emilio = Favorites.new</code> and called <code>emilio.class</code> the console would tell us that this object has a class of <code>Favorites</code>. Pretty simple, right? Lets go 1 level further, from top to bottom.<br><br>
+    <div class ="block">
+          <code>
+          class Favorites<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def initialize<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items = {} <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          <br><br>
+          end
+          </code>
+    </div><br><br>
+          Defining a method called <em>initialize</em> will make it so if you every time you define a new <code>Favorites</code> object, that object will run the code defined in the initialized code block. For this class, the class sets an <em>instance variable</em> equal to an empty hash. You will see in a few minutes what an instance variable is. But moving on..<br><br>
+     <div class ="block">
+          <code>
+          class Favorites<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def initialize<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items = {}<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def favorite_items<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br><br>
+          end<br><br>
+
+          </code>
+    </div><br><br>
+          You are probably asking yourself, what the hell that <code>@</code> doing in front of <code>favorite_items</code> in the code block. Well, when creating classes, putting an <code>@</code> in front of a variable lets Ruby know that that variable is an <b>instance variable</b>. The instance variable enables individual objects to remember state. Another cool thing about it is if an instance variable is defined in one method inside a class, it can then be used by any method defined within that class. So when I call <code>emilio.favorite_items</code>, it would return those favorite items. It won't return anything, however, until we go over the next method. You are also probably wondering why the <code>@favorite_items</code> is in the <code>initialize</code> method as well as the <code>favorite_items</code>. If you wanted to return the collection, i.e., <code>favorite_items</code>, you must define a method that returns it, and thats what we did with the second method created in this class!** <br><br><font size="2.5px">**although there is a shortcut to this, which I will fill you in about down the road!</font><br><br>
+    <div class ="block">
+          <code>
+          class Favorites<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def initialize<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items = {}<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def favorite_items<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def add_fav (category,item)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items[category] = item<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          end
+          </code>
+    </div><br><br>
+          Finally, the last method call in this Class <code>add_fav</code>, accepts two parameters, a <code>category</code> and an <code>item</code>. This method functions to create/overwrite a key-value pair, where the <code>category</code> represents the key, while the <code>item</code> represents the pair! So if I wanted to jot down several favorite things using this class, I would do the following code...<br><br>
+            <div class ="block">
+          <code>
+          emilio = Favorites.new<br>
+          emilio.add_fav(:movie,"The Italian Job")<br>
+          p emilio.favorite_items
+          <div class = "comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#  {:movie=>"The Italian Job"}</div>
+          emilio.add_fav(:movie,"Mad Maxx:Fury Road")<br>
+          p emilio.favorite_items<br>
+          <div class = "comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#  {:movie=>"Mad Maxx:Fury Road"}<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # This overwrites my previous movie!
+
+          </div>
+          emilio.add_fav(:book,"Well-Grounded Rubyist")<br>
+          p emilio.favorite_items<br>
+          <div class = "comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#  {:movie=>"Mad Maxx:Fury Road", :book=>"Well-Grounded Rubyist"}</div>
+          p emilio.favorite_items[:book]<br>
+          <div class = "comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#  "Well-Grounded Rubyist"<br>This is how you would access a certain value given a correct key </div>
+          p emilio.favorite_items[:sport]
+          <div class = "comment">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#  This will return nil since that key-value does not exist, yet!</div><br>
+          </code>
+    </div><br><br>
+          I hope this was clearly conveyed. Although the code is short, there is still ways to refactor and consolidate it. Classes have the ability to declare attributes using the <code>attr_</code> syntax. There are 3 different types of attributes: <code>attr_reader</code>, <code>attr_writer</code> and <code>attr_accessor</code>. <code>attr_reader</code> attributes are similar to writing the following code...<br><br>
+          <div class ="block">
+          <code>
+          def some_method<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@value<br>
+          end<br>
+          </code>
+    </div><br><br>This reader attribute is similar to our favorite_items method! You cannot edit, but when called it will return a value! <code>attr_writer</code> is written like so...<br><br>
+    <div class ="block">
+          <code>
+          def some_method=(value)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@value<br>
+          end<br>
+          </code>
+    </div><br><br>This means you are able to edit/change the instance variable (in this case @value), but this method will not be able to return that method to you if you were to call <code>Class#some_method</code>. The only attribute that can both read and write is <code>attr_accessor</code>, which in code is a combination of both reader/writer would look like this...<br><br>
+    <div class ="block">
+          <code>
+            <code>
+          def some_method<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@value<br>
+          end<br>
+          </code><br>
+          def some_method=(value)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@value<br>
+          end<br>
+          </code>
+    </div><br><br>
+          So in terms of consolidating/refactoring our current class(Favorites), you would use the <code>attr_</code> like so... Before you looking down, try and guess to see which <code>attr_</code> we would use.<br><br><br><br><br>
+    <div class ="block">
+          <code>
+          class Favorites<br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attr_reader :favorite_items<br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def initialize<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items = {}<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def add_fav (category,item)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items[category] = item<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          end
+          </code>
+    </div><br><br>
+          Great! I hope this was a good introduction to classes. There is obviously much more that you can with do Classes than you can with just collections. As I learn and absorb more Ruby knowledge I will come back and add more feedback! On a side note, if you have not watched <b>Mad Max: Fury Road</b>, please go watch it! Then maybe you can create your own Favorites class and add that movie to the list! Until next time, cheers!
+
+
+
+
 
     </font>
 
 
-  </div>
+</div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
 
   <center><footer class="footer"><br>

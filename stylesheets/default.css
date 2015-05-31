@@ -5,7 +5,6 @@
     font-size: 50px;
     color:black;
     text-align:center;
-    text-align:center;
 border:2px solid #2B604F;
 }
 
@@ -49,9 +48,12 @@ background-color:#E5F2F9;
   padding-left:10px;
   padding-right:10px;
   padding-bottom:15px;
-  font-family:Lucida;;
+  font-family:Lucida;
 }
 
+.comment{
+  color:#AEAEAE;
+}
 
 
 .blog{
@@ -63,6 +65,13 @@ background-color:#E5F2F9;
   padding-bottom:15px;
   width:80%;
   font-family:Lucida;
+}
+
+.block{
+  background-color:#f9f2f4;
+  font-family:Lucida;
+  width:30em;
+  align:center;
 }
 
 .portfolio{
@@ -147,4 +156,5 @@ code{
   color: #c7254e;
   background-color: #f9f2f4;
   border-radius: 4px;
+
 }
