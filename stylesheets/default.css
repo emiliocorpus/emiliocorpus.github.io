@@ -12,7 +12,7 @@
   font-size: 30px;
   text-align: left;
   font-family: Lucida;
-  color:#A6A6A6;
+  color:#3990a9;
 
 }
 
@@ -32,8 +32,9 @@ border:5px solid #2B604F;
 .currentquote{
   font-family:Lucida;
   font-size:40px;
-  text-align:left;
+  text-align:right;
   color:#3990a9;
+  padding-right: 15px;
 }
 
 .currentquote p{
@@ -41,6 +42,7 @@ border:5px solid #2B604F;
   font-size:40px;
   text-align:right;
   color:#3990a9;
+  padding-right:15px;
 }
 
 .aboutme{
@@ -106,10 +108,10 @@ background-color:#E5F2F9;
 }
 
 .footer {
-  /*position:relative;*/
+  position:relative;
   bottom:0em;
   text-align: center;
-  height:50px;
+  /*height:50px;*/
 
   font-size: 10px;
   /*background-color:#C3E2CE;*/
@@ -154,12 +156,12 @@ a:visited {
 
 /* mouse over link */
 a:hover {
-    color: red;
+    color: #A6A6A6;
 }
 
 /* selected link */
 a:active {
-    color: yellow;
+    color: #A6A6A6;
 }
 
 code{
