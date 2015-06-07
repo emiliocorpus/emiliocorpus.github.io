@@ -4,8 +4,16 @@
     font-family: Lucida;
     font-size: 50px;
     color:black;
-    text-align:center;
-border:2px solid #2B604F;
+    text-align:left;
+    border:2px solid #2B604F;
+}
+
+.header2{
+  font-size: 30px;
+  text-align: left;
+  font-family: Lucida;
+  color:#A6A6A6;
+
 }
 
 body {
@@ -23,13 +31,14 @@ border:5px solid #2B604F;
   font-family:Lucida;
   font-size:40px;
   text-align:left;
-  color:#3990a9;
+  color:#CCCC52;
 }
 
 .currentquote p{
 
   font-size:40px;
   text-align:right;
+  color:#3990a9;
 }
 
 .aboutme{

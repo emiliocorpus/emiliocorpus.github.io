@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Class Methods</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <!--In the CSS challenge you will need to link
+  to the CSS stylesheet.
+  The link has been left blank for now -->
+</head>
+<body background="../golden_gate_bridge.jpg">
+  <div class="header">A JOURNEY INTO THE RABBIT HOLE<br>
+  <div class="header2">LEARNING TO PROGRAM FROM EMILIO'S EYES</div>
+
+  </div>
+  <div class="menu" align="right"><br>
+    <center><table class="tablemenu">
+      <tr>
+         <td class="menu-home"><a href="../index.html">.HOME</a></td>
+          <td class="menu-aboutme"><a href="../aboutme.html">.ABOUT ME</a></td>
+          <td class="menu-blog"><a href="blog.html">.BLOGS</a></td>
+          <td class="menu-portfolio"><a href="../portfolio.html">.PORTFOLIO</a></td>
+          <td class="menu-credits"><a href="../credits.html">.CREDITS</a></td>
+      </tr>
+    </table></center>
+  </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="blog-text"><br>
+
+    <br>
+    <font size="8px">BLOG 10:Class Methods</font><br>
+    <font size="6px">SATURDAY, 6/6/2015</font>
+    <br><br>
+    <font size="3px">
+      So last week I talked about what it means to be a "Class" in Ruby, and went through an example (albeit small and simple). Today I'll be doing the same, but with more emphasis on the methods that can be created in a Class. Like last time, let' start with an example!<br><br>
+      So if you remember, last time we created a class called "Favorites", which had 2 methods, one that was able to return a list of your favorite items, as well as a method that can add a category/item to the list. If you remember, we used <code>attr_reader</code> to create a "reader" method that is able to return a collection of the favorite_items. Lets add a few more methods, specifically a method that checks to see if you have a category and removes it if you do. Here is what the class lookes like before adding any more methods.
+      <br><br>
+      <div class ="block">
+          <code>
+          class Favorites<br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attr_reader :favorite_items<br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def initialize<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items = {}<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def add_fav (category,item)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items[category] = item<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          end
+          </code>
+    </div><br><br>
+    So let's add the method!<br><br>
+      <div class="block">
+          <code>
+          class Favorites<br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attr_reader :favorite_items<br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def initialize<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items = {}<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+          <br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def add_fav (category,item)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items[category] = item<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
+
+          <br>
+
+
+
+          <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def remove_fav (category)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@favorite_items.delete_if {|favorite_category, item|<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;favorite_category == category }<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</b><br>
+          end<br>
+        </code>
+      </div><br><br>
+      So I have been trying to brush up on my Object Oriented Design, and after reading around I have come to the conclusion that you want your methods in your class to be responsible for 1 function and 1 function only. This is why we shouldn't combine the <code>add_fav</code> and <code>remove_fav</code> methods!.I believe that all 3 of these methods in our new Favorites class meet this criteria! The new method <code>remove_fav</code> takes a category as it's single argument, and if that category is equal to the favorite_categories in our instance variable <code>@favorite_items</code>, it will delete if from the colleciton. Below is a list of example calls with commented output!<br><br>
+      <div class = "block">
+        <code>
+          emilio = Favorites.new<div class = "comment"># This creates new instance of our Favorites class</div>
+          emilio.add_fav(:movie,"The Italian Job")<div class = "comment"># This adds a new category(key/value pair)</div>
+          p emilio.favorite_items<div class = "comment"># {:movie=>"The Italian Job"}</div>
+          emilio.add_fav(:movie,"Ocean's Eleven")<div class = "comment"># This adds a new category(key/value pair), while replacing the other :movie value</div>
+          p emilio.favorite_items<div class = "comment"># {:movie=>"Ocean's Eleven"} also note that "Ocean's Eleven" replaced "The Italian Job"</div>
+          emilio.add_fav(:book,"LOTR TRILOGY")<div class = "comment"># This adds a new category (key/value pair)</div>
+          p emilio.favorite_items<div class = "comment"># {:movie=>"Ocean's Eleven", :book=>"LOTR TRILOGY"}</div>
+          p emilio.favorite_items[:book]<div class = "comment"># LOTR TRILOGY</div>
+          emilio.add_fav(:sport,"basketball")<div class = "comment"># This adds new category (key/value pair)</div>
+          p emilio.favorite_items[:sport]<div class = "comment"># basketball</div>
+          emilio.remove_fav(:sport)<div class = "comment"># This removes the key/value pair if it exists in the hash</div>
+          p emilio.favorite_items[:sport]<div class = "comment"># nil</div>
+          p emilio.favorite_items<div class = "comment"># {:movie=>"Ocean's Eleven", :book=>"LOTR TRILOGY"} note that the sport category was indeed removed</div><br><br>
+           </code>
+      </div><br><br>
+      Although not completely obvious, it should be stated that none of these methods can be called on an object that is not of the <code>Favorites</code> class! So if I were to try and call this:<br><br>
+
+      <div class = "block"><code>
+        favorites = {:movie => "Ocean's Eleven"}<br>
+        favorites.add_fav(:month, "December")<div class = "comment"># undefined method `add_fav' for {:movie=>"Ocean's Eleven"}:Hash (NoMethodError)</div>
+      </code>
+      </div><br><br>
+      This is the take home message: you cannot use one's classes methods in another instance of different class unless the first class is a SuperClass, or "parent" of the other! Although it sounds scary, it really isn't! This ability gives you more wiggle room in naming variables in your class, since it is in it's own scope and does not need to worry about variables in other classes! <br><br>
+      Although I am more aware of what classes are (and aren't), the material is still new and at times foreign. I think the best advice I can give to newer students of Ruby (like me) is to think about what methods are needed for your particular class. If your class has several functions, then your class most likely will have just as many methods. The key is to simplify the code, and keeping the methods concise and specific to one function alone. This will allow you to make easier changes in the future, because instead of changing this big, giant, ugly method with multiple functions, you may only need to just change one! Until next time, cheers!
+
+
+
+
+
+
+
+    </font>
+
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <center><footer class="footer"><br>
+THIS IS THE FOOTER
+</div></footer></center>
+
+</body>
