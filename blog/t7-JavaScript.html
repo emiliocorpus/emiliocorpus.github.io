@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ruby Vs. Javascript</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <!--In the CSS challenge you will need to link
+  to the CSS stylesheet.
+  The link has been left blank for now -->
+</head>
+<body background="../imgs/golden_gate_bridge.jpg">
+  <div class="header">A JOURNEY INTO THE RABBIT HOLE<br>
+  <div class="header2">LEARNING TO PROGRAM FROM EMILIO'S EYES</div>
+
+  </div>
+  <div class="menu" align="right"><br>
+    <center><table class="tablemenu">
+      <tr>
+         <td class="menu-home"><a href="../index.html">.HOME</a></td>
+          <td class="menu-aboutme"><a href="../aboutme.html">.ABOUT ME</a></td>
+          <td class="menu-blog"><a href="blog.html">.BLOGS</a></td>
+          <td class="menu-portfolio"><a href="../projects/index.html">.PORTFOLIO</a></td>
+          <td class="menu-credits"><a href="../credits.html">.CREDITS</a></td>
+      </tr>
+    </table></center>
+  </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="blog-text"><br>
+
+    <br>
+    <font size="8px">BLOG 12:Javascript Vs. Ruby</font></a><br>
+    <font size="6px">MONDAY, 6/15/2015</font>
+    <br>
+    <font size="3px">
+      <br>
+      I am still in the beginning of my programming voyage and have been mostly absorbing Ruby over the last 7 weeks. However this week I have become more familiar with a new languange, Javascript. I had some experience with Javascript through <a href="https:/www.codecademy.com">codecademy</a> several months ago as well as <a href="http://eloquentjavascript.net/00_intro.html">Eloquent Javscript</a>. These are great introductory resources I recommend to any novice like myself. Javascript has many differences yet at the same time has so many parallels with Ruby. Today I will be discussing some of this differences/similariites.<br><br>
+      From what I have learned so far, Ruby has a larger bag of tricks in comparison to Javascript. I discovered this the hard way when attempting to write Javascript code. I found that javascript does not have have many of the enumerable methods, such as each, map and select, that Ruby has built into its libraries. But like Ruby, one can create these <em>functions</em> and then incorporate into their code. Let's start small and work our way up to creating one of these <em>functions</em>.<br><br>
+      First of all, in Ruby one can define a variable like the following:<br><br>
+
+      <div class="block">
+        <b>RUBY</b><br>
+      <code>
+        <br>
+        my_name = "Emilio"<br>
+        puts my_name<div class="comment"># => Emilio</div>
+      </code>
+      </div><br><br>
+
+      In Javascript defining a variable is different but pretty simple. When you are defining a variable for the first time you would use the following:<br><br>
+
+      <div class="block">
+        <b>JAVASCRIPT</b><br>
+      <code><br>
+        <b>var</b> my_name = "Emilio";<br>
+        console.log(my_name);<br>
+         <div class="comment">// => Emilio</div>
+        my_name = "the many faced god";<br>
+        console.log(my_name);<br>
+        <div class="comment">// => the many faced god</div>
+     <br>
+      </code>
+      </div><br>
+
+      So when defining a variable for the first time you have to write <code>var</code> in front of the variable you are naming. Like ruby, you use an equals sign to set that to the value desired, in this case it was first my name, "Emilio". To print something to the console you must use <code>console.log()</code>, and the thing you wanted to be printed goes within the parens. This is similar to what <code>puts</code> does in Ruby. Once you have a variable assigned to a value, you can reassign that variable to a different value, but note that you do not need to write the <code>var</code> again. Also, in Javascript it is important to end each expression with a <code>;</code>. In Ruby you did not need such separators, but in Javascript a missing <code>;</code> can destroy your whole code!<br><br>
+
+
+      In Ruby one can adjust the indices in Strings <em>AND</em> Arrays. However in Javascript you can only adjust arrays, as Strings are immutable once they are defined. Javascript does not have any other collection based datatypes, unlike Ruby which has the Hash collection. However, Javascript does seem to have something similar to Hashes, and these are called objects. Let's define an object below and see if you understand the test code I write after defining:<br><br>
+
+      <div class="block"><b>JAVASCRIPT</b><br><br><code>
+
+        var emilio = {<br>
+        &nbsp;&nbsp;&nbsp;firstName: "Emilio",<br>
+        &nbsp;&nbsp;&nbsp;lastName: "Corpus",<br>
+        &nbsp;&nbsp;&nbsp;age: 25,<br>
+        &nbsp;&nbsp;&nbsp;city: "San Ramon",<br>
+        &nbsp;&nbsp;&nbsp;state: "California",<br>
+        };<br>
+        <br>
+        console.log("My name is " + emilio.firstName + " " + emilio.lastName + " and I am " + emilio.age + " years old. I am from " + emilio.city + ", " + emilio.state)<br>
+        console.log(emilio.favoriteSport);<br>
+        emilio.favoriteSport = "basketball"<br>
+        console.log(emilio.favoriteSport);
+        emilio.firstName = "Number"<br>
+        emilio.lastName = 2<br>
+        console.log("My name is " + emilio.firstName + " " + emilio.lastName)<br>
+      </code></div><br><br>
+      Can you guess what the output of every <code>console.log()</code> will be? Take a minute to see what is you think will happen then scroll down and compare your predicted results. <br><br><br><br><br><br><br><br>
+
+
+      <div class="block">
+        <div class="comment">
+        First console.log() call = "My name is Emilio Corpus and I am 25 years old. I am from San Ramon, California."<br>
+        <br>
+        Second console.log() call = undefined<br><br>
+
+        Third console.log() call = "basketball"<br><br>
+
+        Fourth console.log() cal = "My name is Number 2"
+
+        </div>
+      </div><br><br>
+      So in comparison to Ruby, Javascript objects are kind of like Hashes in that can define different properties to different values. If you try to call a propety that does not exist, you will get <code>undefined</code> in return. However, like in Ruby, you can create properties outside of the explicit Object definition( <code>objectName.propertyName = valueDesiredHere</code>). I did this when I defined the <em>favoritSport</em> property to equal <em>"basketball"</em>.<br><br>
+      Javascript also has the ability to use loops like Ruby does. The syntax for the infamous <code>while</code> loop is the following:<br><br>
+
+      <div class ="block"><b>JAVSCRIPT</b><br><code><br>
+        while (condition here within parens) {
+        <br><br>
+        &nbsp;&nbsp;&nbsp;code block here<br>
+        <br>
+        }
+
+
+
+
+      </code>
+    </div><br>
+      Its use is similar to that of Ruby, in that the code block will be executed as long as the condition is true. Another type of loop very integral to Javascript is the <code>for</code> loop. An example is described below<br><br>
+
+    <div class="block"><b>JAVASCRIPT</b><br><code><br>
+      var array = [1,2,3,4,5];<br>
+      for (var i = 0; i < array.length; i++) {<br>
+      &nbsp;&nbsp;&nbsp;console.log(array[i]);<br>
+      }<br>
+      <div class="comment">
+      // => 1<br>
+      // => 2<br>
+      // => 3<br>
+      // => 4<br>
+      // = >5<br>
+      </div>
+    </code>
+    </div><br><br>
+    In this above code block we have an array defined with 5 different values (the numbers 1-5). Inside the parens of the for loops you will notice we have 3 different expression (all separated withe the <code>;</code>). The first expression is setting a variable equal to zero. The second expression is basically a while loop without the <code>while</code> statement. You will notice the <code>.length</code> property that is called on the variable <code>array</code>. This does exactly what you would expect it to do in Ruby, it evaluates to the length (ie. number of items in the array). The third expression changes the value of i to and increments it by 1. So as long as the value of the variable <code>i</code> is less than the number of items in the array, the code block will be execute. In this case we are printing the value at the <code>i</code> index of the array until the variable <code>i</code> is no longer less than the length of the array. Although the format of the for loop is much different than Ruby's while loop, the ideas/fundamentals behind is the same: while a certain condition is true execute the code and stop when the condition is no longer true.<br><br>
+
+    If you remember in the beginning of this blog I told you that Javascript does not have a built-in <code>.each</code> method like Ruby does. Let's create it now:<br><br>
+    <div class="block"><b>JAVASCRIPT</b><br><br><code>
+    var each = function(array, func) {<br>
+    &nbsp;&nbsp;&nbsp;for (var i=0; i < array.length; i++) {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func(array[i]);<br>
+    &nbsp;&nbsp;&nbsp;}<br>
+    };<br><br>
+    </code>
+    </div><br><br>
+    You are probably commenting right now, "what the hell did he just do...". Well no worries friend, I am here to explain! Javascript has the ability to create functions. This is similar to writing <em>methods</em> in Ruby. The function we created here has two parameters: an array and another argument func (which is a function). Insided our codeblock of the each function is a for loop (just like the previous for loop), and within the for loop's code block is a segment of code that executes the function you gave it through the each function. So basically what it will do is execute the function you give it for each item in the array! So say we wanted to print out a list of the items, 3 times per item, we would do the following:<br><br>
+
+    <div class="block"><b>JAVASCRIPT</b><code><br><br>
+     var each = function(array, func) {<br>
+    &nbsp;&nbsp;&nbsp;for (var i=0; i < array.length; i++) {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;func(array[i]);<br>
+    &nbsp;&nbsp;&nbsp;}<br>
+    };<br><br>
+    var myItems = [1,2,3,"cat","dog",true,false,]<br>
+    <br>
+    var storedList = each(myItems,function(x) {console.log(x + x + x)};
+    storedList();<br>
+    <div class="comment">
+    // =>111<br>
+    // =>222<br>
+    // => catcatcat<br>
+    // => dogdogdog<br>
+    // => truetruetrue<br>
+    // => falsefalsefalse<br><br>
+
+
+    </div>
+    </code>
+    </div><br>
+      I am only at the beginning of my Javascript journey and I can tell you that the there are many parallels with the structure of Ruby. Having a basic foundation for Ruby has given me a better understanding of the functionalities that Javascript possesses.We went through a lot today but I hope you can see that even though Javascript has many differences, its fundamentals are quite similar to Ruby. As my knowledge of Javascript grows I will probably find even more similarities/differences between the 2 languanges if have most recently learned. Until next time thanks for following me!<br>
+
+    </font>
+
+
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+   <center><footer class="footer"><br><div class="images">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/uh_mili_oh">
+<img title="Twitter" alt="Twitter" src="../imgs/twitter_square.png" width="35" height="35" />
+</a>&nbsp;&nbsp;
+<a href="https://www.facebook.com/ehcorpuz">
+<img title="Facebook" alt="Facebook" src="../imgs/facebook_square.png" width="35" height="35" />
+</a>&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/emiliocorpus">
+<img title="LinkedIn" alt="LinkedIn" src="../imgs/linkedin_square.png" width="35" height="35" />
+</a></div>
+</div></footer></center>
+</body>
