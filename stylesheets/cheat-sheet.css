@@ -54,7 +54,7 @@ a:visited {
     color: blue;
 }
 
-a img {
+.twitter-handles {
   position: fixed;
   bottom: 1em;
   right: 2.5em;
