@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Regular Expressions</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+</head>
+<body background="../imgs/golden_gate_bridge.jpg">
+  <div class="header">A JOURNEY INTO THE RABBIT HOLE<br>
+  <div class="header2">LEARNING TO PROGRAM FROM EMILIO'S EYES</div>
+
+  </div>
+  <div class="menu" align="right"><br>
+    <center><table class="tablemenu">
+      <tr>
+         <td class="menu-home"><a href="../index.html">.HOME</a></td>
+          <td class="menu-aboutme"><a href="../aboutme.html">.ABOUT ME</a></td>
+          <td class="menu-blog"><a href="blog.html">.BLOGS</a></td>
+          <td class="menu-portfolio"><a href="../projects/index.html">.PORTFOLIO</a></td>
+          <td class="menu-credits"><a href="../credits.html">.CREDITS</a></td>
+      </tr>
+    </table></center>
+  </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="blog-text"><br>
+
+    <br>
+    <font size="8px">BLOG 14: An Intro to Regular Expressions</font></a><br>
+    <font size="6px">SUNDAY, 6/21/2015</font>
+    <br>
+    <font size="3px">
+      <br>
+      As defined by the <a href="http://ruby-doc.org/core-2.2.0/Regexp.html">ruby-doc.org</a> resource site, regular expressions are patterns which describe the contents of a string. It is a class/object provided to many different programming languages. It allows a programmer to change certain values of strings or find values based on if the string has those specified patterns. In this tutorial we will use Ruby to illustrate these concepts.<br><br>
+      A regular expression pattern can be composed of simple characters. It can look like <code>/abc123/</code> or <code>/Emilio is a cool guy/</code>. In Ruby, there is a <code>Regexp</code> class. You can create a new <code>Regexp</code> by using the <code>/reg exp in here/</code> and <code>%r{reg exp in here}</code>, or the <code>Regexp.new</code> literal constructor.<br><br>
+      Let us look at an example<br><br>
+
+      <div class="block">
+        <code>
+          test_string = "Steph Curry is the chef"
+          <br><br>
+          if test_string =~ /chef/<br>
+          &nbsp;&nbsp;&nbsp;p "Oh, you know it"<br>
+          else<br>
+          &nbsp;&nbsp;&nbsp;p "This should not print"<br>
+          end<br>
+          <div class="comment"># => "Oh, you know it"
+          </div>
+        </code>
+      </div><br>
+      In Ruby, to check if a string or variable containing a string has a certain regular expression you must use the <code>=~</code>, (although some built in methods already have this integrated into its code block).<br><br>
+      Except for control characters, which include:<br>
+      <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(+?.*^$()[]{}|\)</strong><br>
+      all characters match themselves. You can escape a control character by preceding it with a backslash.<br><br>
+      <div class="block"><code>
+      test_string2 ="(+?>"<br><br>
+      if test_string2 =~ /\+/<br>
+      &nbsp;&nbsp;&nbsp;p "Bingo!"<br>
+      else<br>
+      &nbsp;&nbsp;&nbsp;p "This should not print"<br>
+      end<br>
+      <div class="comment"># => "Bingo!"
+      </div>
+      </code>
+      </div><br>
+      <a href="http://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm">This</a> is a link that has tables of regular expressions pattern syntax for Ruby. In this tutorial we will be going through some but not all of these points. I would definitely recommend using <a href="http://www.tutorialspoint.com/">www.tutorialspoint.com</a> as they have a great overview of Regular Expressions in Ruby.<br><br>
+      The first pattern we will look at is the <code>[..]</code> pattern, which matches any <em>single</em> character in the brackets. There is also a <code>[^..]</code>, which matches any single character that is not in the brackets following the <code>^</code>.<br><br>
+
+
+      <div class="block"><code>
+      test_string3 = "Harry plays the xylophone"<br><br>
+      if test_string3 =~ /[bzqxfz]/<br>
+      &nbsp;&nbsp;&nbsp;p true<br>
+      else<br>
+      &nbsp;&nbsp;&nbsp;p "This will not print"<br>
+      end<br>
+      <div class="comment">#=> true</div>
+      </code>
+      </div><br>
+      Since the pattern <code>/[bzqxfz]/</code> has an 'x' in it, the first if statement will be executed.<br><br>
+
+      The <code>\s</code> pattern represents a space character.<br><br>
+
+
+      <div class="block"><code>
+      test_string4 = "Thissentencehasnospaces"<br><br>
+      if test_string4 =~ /\s/<br>
+      &nbsp;&nbsp;&nbsp;p "Since the sentence has no spaces"<br>
+      &nbsp;&nbsp;&nbsp;p " this will not print"<br>
+      else<br>
+      &nbsp;&nbsp;&nbsp;p "But this will!!"<br>
+      end<br>
+      <div class="comment"># => "But this will!!"</div><br>
+      </code></div><br><br>
+      One important and highly used method in Ruby is the <code>gsub</code> method. This returns a copy of the str with all occurences of the pattern substituted with a new pattern that you enter as a second argument. It looks like so:<br><br>
+
+      <div class="block"><code>
+      test_string5 = "My password is ****"
+      <br><br>
+      test_string5.gsub!(/\*\*\*\*/, "1234")
+      <br><br>
+      p test_string5
+      <br><br>
+      <div class="comment">
+      # => "My password is 1234"
+      </div>
+      </code></div><br><br>
+      Please note that I used the <code>!</code> symbol in order to change the original array. You can use <code>gsub</code> without it. There is also a <code>sub</code> method that only changes the <em>first</em> pattern it comes across. It too has a <code>!</code> destructive property.<br>
+
+
+
+
+      <br>
+      Lastly, we are going to look at an Enumerable method called <code>grep</code>. This method returns an array of every element in the enumerable object that matches or has the regular expression pattern. Lets say we have the following array:<br><br>
+      <div class="block"><code>
+      test_array1 = ["Gabriel", "Emilio", "Alex", "Bob", "Gerald", "George", "Igor","Zoolander"]</code></div><br>
+      Let's try and select every item that has a "G" or "Z" in it.<br><br>
+      <div class="block"><code>
+      <br>
+      p test_array1.grep(/[GZ]/)<br>
+      <br>
+      <div class="comment">
+      # => ["Gabriel", "Gerald", "George", "Zoolander"]
+      </div><br><br>
+      </code>
+      </div>
+      <br><br>
+      If you noticed, the name "Igor" did not get selected even though it has a "g" in its string. Regular expressions take case into account. If we had used <code>/[GgZ]/</code> then "Igor" would have been in the returned array. This method makes looking/checking for certain string values much easier. <br><br>
+      Like I said earlier, I highly suggest looking through <a href="http://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm">this</a> resource. There is still a lot of syntax to learn, but this website is a good resource to fall back on if you even need more review. I am still learning about the topic myself and will probably learn much more about RegEx through different languages! Until next time, cheers!
+
+    </font>
+
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+   <center><footer class="footer"><br><div class="images">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/uh_mili_oh">
+<img title="Twitter" alt="Twitter" src="../imgs/twitter_square.png" width="35" height="35" />
+</a>&nbsp;&nbsp;
+<a href="https://www.facebook.com/ehcorpuz">
+<img title="Facebook" alt="Facebook" src="../imgs/facebook_square.png" width="35" height="35" />
+</a>&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/emiliocorpus">
+<img title="LinkedIn" alt="LinkedIn" src="../imgs/linkedin_square.png" width="35" height="35" />
+</a></div>
+</div></footer></center>
+</body>
