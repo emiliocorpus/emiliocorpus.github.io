@@ -38,18 +38,26 @@ var addItem = function() {
   itemCol.innerHTML = item.toString();
   quantCol.innerHTML = quantity.toString();
   priceCol.innerHTML = price.toString();
-  checkedCol.innerHTML = '';
+  var notChecked = "&#10060;";
+  checkedCol.innerHTML = notChecked;
 
   totalMinPrice += (quantity * price);
 
   var summedPrice = document.getElementById("price-here");
   summedPrice.innerHTML = totalMinPrice.toFixed(2);
+
 };
 
 var removeItem = function(){
   var itemName = prompt('Please supply the name of the item as it is written in the list');
   var itemsToBeDeleted = document.getElementById(itemName);
+  totalMinPrice -= Number(itemsToBeDeleted.cells[1].innerHTML) * parseFloat(itemsToBeDeleted.cells[2].innerHTML);
+
+
+
   itemsToBeDeleted.remove();
+  var summedPrice = document.getElementById("price-here");
+  summedPrice.innerHTML = totalMinPrice;
 };
 
 var adjustQuantity = function() {

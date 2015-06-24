@@ -38,7 +38,10 @@ h3 {
 }
 
 button {
-  margin:20px;
+  margin:25px;
+  padding:20px;
+  border-radius:10px;
+  outline:none;
 
 }
 
