@@ -45,7 +45,6 @@ var addItem = function() {
 
   var summedPrice = document.getElementById("price-here");
   summedPrice.innerHTML = totalMinPrice.toFixed(2);
-
 };
 
 var removeItem = function(){
@@ -57,7 +56,7 @@ var removeItem = function(){
 
   itemsToBeDeleted.remove();
   var summedPrice = document.getElementById("price-here");
-  summedPrice.innerHTML = totalMinPrice;
+  summedPrice.innerHTML = totalMinPrice.toFixed(2);
 };
 
 var adjustQuantity = function() {
