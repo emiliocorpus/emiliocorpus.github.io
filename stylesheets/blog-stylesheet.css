@@ -1,5 +1,6 @@
 body {
   font-family:futura;
+
 }
 
 .tablemenu{
@@ -42,7 +43,7 @@ border:2px solid #EAF4EC;
   background-color: #EAF4EC;
   position: relative;
   top: 94px;
-  left:5 px;
+  left:5px;
   width: 55%;
   margin-bottom:250px;
   border:3px solid #E5F2F9;

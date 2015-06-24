@@ -1,0 +1,81 @@
+h1 {
+  font-size:50px;
+  margin-left:50px;
+  margin-top:30px;
+  font-family: 'Indie Flower', cursive;
+}
+
+body{
+  background-color:#FFFFC2;
+
+}
+
+#cap-letter {
+  font-size:75px;
+}
+
+#version {
+  font-size:35px;
+  color:#6699FF;
+}
+
+#grocery-list {
+  padding:20px;
+  margin-top:50px;
+  margin-left:20px;
+  margin-right:10px;
+  width:auto;
+  height:auto;
+  background-color:#FFF5EB;
+  border-radius: 20px;
+  font-family: 'Dosis', sans-serif;
+}
+
+h3 {
+  margin-left:50px;
+
+
+}
+
+button {
+  margin:20px;
+
+}
+
+table {
+  margin-left:100px;
+   border:2px solid black;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding-left:60px;
+  padding-right:60px;
+   border:2px solid black;
+  border-collapse: collapse;
+}
+
+
+
+footer {
+    bottom:1em;
+    position:relative;
+    font-size: 15px;
+}
+
+.network-handles {
+  clear:both;
+  position: fixed;
+  bottom: 1em;
+  right: 2.5em;
+}
+
+.network-handles a {
+  text-decoration: none;
+}
+
+a:visited {
+    color: blue;
+}
+
+]
