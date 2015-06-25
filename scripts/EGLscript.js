@@ -27,13 +27,13 @@ var addItem = function() {
     var summedPrice = document.getElementById("price-here");
     summedPrice.innerHTML = totalMinPrice.toFixed(2);
     document.getElementById('error').innerHTML = '';
+    item.value = '';
   }
 };
 
 var removeItem = function(){
 
   if (!document.getElementById(item.value)) {
-    //It does not exist
     document.getElementById('error').innerHTML = 'Cannot remove item, item does not exist';
   }
   else {
@@ -49,7 +49,6 @@ var removeItem = function(){
 var adjustQuantity = function() {
 
   if (!document.getElementById(item.value)) {
-    //It does not exist
     document.getElementById('error').innerHTML = 'Cannot ajust quantity, item does not exist';
   }
 
@@ -74,7 +73,6 @@ var adjustQuantity = function() {
 
 var adjustPrice = function() {
   if (!document.getElementById(item.value)) {
-    //It does not exist
     document.getElementById('error').innerHTML = 'Cannot adjust price, item does not exist';
   }
 
@@ -99,7 +97,6 @@ var adjustPrice = function() {
 
 var markItem = function() {
   if (!document.getElementById(item.value)) {
-    //It does not exist
     document.getElementById('error').innerHTML = 'Cannot check item, item does not exist';
   }
   else {
