@@ -1,109 +1,139 @@
 var totalMinPrice = 0.00;
+var item = document.getElementById('item');
+var quantity = document.getElementById('quantity');
+var price = document.getElementById('price');
+var error = document.getElementById('error');
+var notChecked = "&#10060;";
 
 var addItem = function() {
-
-  var item = prompt("What item do you want to add?");
-  var rightQuant = 0;
-  var rightPrice = 0;
-
-
-  while (rightQuant !== 1) {
-    var quantity = prompt("How many of this item?");
-    if (isNaN(quantity) !== false ) {
-      alert("Enter a valid number please:");
-    }
-    else {
-      rightQuant=1;
-    }
+  if (item.value==='') {
+    document.getElementById('error').innerHTML = 'Please enter an item in the "Item:" field';
   }
+  else {
+    var table = document.getElementById("grocery-table");
+    var newItem = table.insertRow();
+    newItem.id = item.value;
+    var itemCol = newItem.insertCell(0);
+    var quantCol = newItem.insertCell(1);
+    var priceCol = newItem.insertCell(2);
+    var checkedCol = newItem.insertCell(3);
 
-  while (rightPrice !== 1) {
-    var price = prompt("Please enter price per item, or enter a value of 0 if you do not know");
-    if (isNaN(price) !== false) {
-      alert("Enter a valid price please:")
-    }
-    else {
-      rightPrice=1;
-    }
+      itemCol.innerHTML = item.value;
+      quantCol.innerHTML = quantity.value;
+      priceCol.innerHTML = price.value;
+      checkedCol.innerHTML = notChecked;
+
+    totalMinPrice += (quantity.value * price.value);
+    var summedPrice = document.getElementById("price-here");
+    summedPrice.innerHTML = totalMinPrice.toFixed(2);
+    document.getElementById('error').innerHTML = '';
   }
-
-  var table = document.getElementById("grocery-table");
-  var newItem = table.insertRow();
-  newItem.id = item;
-  var itemCol = newItem.insertCell(0);
-  var quantCol = newItem.insertCell(1);
-  var priceCol = newItem.insertCell(2);
-  var checkedCol = newItem.insertCell(3);
-
-  itemCol.innerHTML = item.toString();
-  quantCol.innerHTML = quantity.toString();
-  priceCol.innerHTML = price.toString();
-  var notChecked = "&#10060;";
-  checkedCol.innerHTML = notChecked;
-
-  totalMinPrice += (quantity * price);
-
-  var summedPrice = document.getElementById("price-here");
-  summedPrice.innerHTML = totalMinPrice.toFixed(2);
 };
 
 var removeItem = function(){
-  var itemName = prompt('Please supply the name of the item as it is written in the list');
-  var itemsToBeDeleted = document.getElementById(itemName);
-  totalMinPrice -= Number(itemsToBeDeleted.cells[1].innerHTML) * parseFloat(itemsToBeDeleted.cells[2].innerHTML);
 
-
-
-  itemsToBeDeleted.remove();
-  var summedPrice = document.getElementById("price-here");
-  summedPrice.innerHTML = totalMinPrice.toFixed(2);
+  if (!document.getElementById(item.value)) {
+    //It does not exist
+    document.getElementById('error').innerHTML = 'Cannot remove item, item does not exist';
+  }
+  else {
+    var toBeDeleted = document.getElementById(item.value);
+    totalMinPrice -= Number(toBeDeleted.cells[1].innerHTML) * parseFloat(toBeDeleted.cells[2].innerHTML);
+    toBeDeleted.remove();
+    var summedPrice = document.getElementById("price-here");
+    summedPrice.innerHTML = totalMinPrice.toFixed(2);
+    document.getElementById('error').innerHTML = '';
+  }
 };
 
 var adjustQuantity = function() {
-  var itemName = prompt('Please supply the name of the item as it is written in the list');
-  var newQuant = prompt('Please enter the new quantity');
-  var itemRow = document.getElementById(itemName).cells;
-  var oldQuant = parseFloat(itemRow[1].innerHTML);
-  itemRow[1].innerHTML = parseFloat(newQuant);
 
-  var summedPrice = document.getElementById("price-here");
-
-  if (oldQuant > newQuant) {
-    totalMinPrice -= (oldQuant-newQuant)*parseFloat(itemRow[2].innerHTML);
-    summedPrice.innerHTML = totalMinPrice.toFixed(2);
+  if (!document.getElementById(item.value)) {
+    //It does not exist
+    document.getElementById('error').innerHTML = 'Cannot ajust quantity, item does not exist';
   }
+
   else {
-    totalMinPrice += (newQuant-oldQuant)*parseFloat(itemRow[2].innerHTML);
-    summedPrice.innerHTML = totalMinPrice.toFixed(2);
+    var newQuant = quantity.value;
+    var itemRow = document.getElementById(item.value).cells;
+    var oldQuant = parseFloat(itemRow[1].innerHTML);
+    itemRow[1].innerHTML = parseFloat(newQuant);
+
+    var summedPrice = document.getElementById("price-here");
+    document.getElementById('error').innerHTML = '';
+    if (oldQuant > newQuant) {
+      totalMinPrice -= (oldQuant-newQuant)*parseFloat(itemRow[2].innerHTML);
+      summedPrice.innerHTML = totalMinPrice.toFixed(2);
+    }
+    else {
+      totalMinPrice += (newQuant-oldQuant)*parseFloat(itemRow[2].innerHTML);
+      summedPrice.innerHTML = totalMinPrice.toFixed(2);
+    }
   }
 };
 
 var adjustPrice = function() {
-  var itemName = prompt('Please supply the name of the item as it is written in the list');
-  var newPrice = prompt('Please enter the new price per item');
-  var itemRow = document.getElementById(itemName).cells;
-  var oldPrice = parseFloat(itemRow[2].innerHTML);
-  itemRow[2].innerHTML = parseFloat(newPrice);
-
-  var summedPrice = document.getElementById("price-here");
-
-  if (oldPrice > newPrice) {
-    totalMinPrice -= (oldPrice-newPrice)*Number(itemRow[1].innerHTML);
-    summedPrice.innerHTML = totalMinPrice.toFixed(2);
+  if (!document.getElementById(item.value)) {
+    //It does not exist
+    document.getElementById('error').innerHTML = 'Cannot adjust price, item does not exist';
   }
+
   else {
-    totalMinPrice += (newPrice-oldPrice)*Number(itemRow[1].innerHTML);
-    summedPrice.innerHTML = totalMinPrice.toFixed(2);
+    var newPrice = price.value;
+    var itemRow = document.getElementById(item.value).cells;
+    var oldPrice = parseFloat(itemRow[2].innerHTML);
+    itemRow[2].innerHTML = parseFloat(newPrice);
+
+    var summedPrice = document.getElementById("price-here");
+    document.getElementById('error').innerHTML = '';
+    if (oldPrice > newPrice) {
+      totalMinPrice -= (oldPrice-newPrice)*Number(itemRow[1].innerHTML);
+      summedPrice.innerHTML = totalMinPrice.toFixed(2);
+    }
+    else {
+      totalMinPrice += (newPrice-oldPrice)*Number(itemRow[1].innerHTML);
+      summedPrice.innerHTML = totalMinPrice.toFixed(2);
+    }
   }
 };
 
 var markItem = function() {
-  var itemName = prompt('Please supply the name of the item as it is written in the list');
-  var itemRow = document.getElementById(itemName).cells;
-  var checked = "&#9989;";
+  if (!document.getElementById(item.value)) {
+    //It does not exist
+    document.getElementById('error').innerHTML = 'Cannot check item, item does not exist';
+  }
+  else {
+    var itemRow = document.getElementById(item.value).cells;
+    var checked = "&#9989;";
 
-  itemRow[3].innerHTML = checked;
+    itemRow[3].innerHTML = checked;
+    document.getElementById('error').innerHTML = '';
+  }
 };
+
+var digitsOnly = /[1234567890]/g;
+var integerOnly = /[0-9\.]/g;
+
+
+function restrictCharacters(myfield, e, restrictionType) {
+  if (!e)
+    var e = window.event
+    if (e.keyCode)
+      code = e.keyCode;
+    else if (e.which)
+      code = e.which;
+    var character = String.fromCharCode(code);
+
+  if (!e.ctrlKey && code!=9 && code!=8 && code!=36 && code!=37 && code!=38 && (code!=39 || (code==39 && character=="'")) && code!=40) {
+    if (character.match(restrictionType)) {
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+};
+
 
 document.getElementById("foot01").innerHTML =
 "<p>&copy;  " + new Date().getFullYear() + " <a href=\"http://emiliocorpus.github.io/index.html\">Emilio Corpus</a>. All rights reserved.</p>";

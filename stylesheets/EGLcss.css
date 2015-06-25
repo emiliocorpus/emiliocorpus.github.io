@@ -12,8 +12,12 @@ h1 {
 }
 body{
   background-color:#FFFFC2;
-
 }
+
+input {
+  margin:40px;
+}
+
 
 #cap-letter {
   font-size:75px;
@@ -38,6 +42,11 @@ body{
 
 h3 {
   margin-left:50px;
+}
+
+h4 {
+  margin-left:50px;
+  color:#FF4D4D;
 
 
 }
@@ -49,6 +58,7 @@ button {
   outline:none;
   clear:both;
   float:none;
+  background-color:#DCDCDC;
 }
 
 table {

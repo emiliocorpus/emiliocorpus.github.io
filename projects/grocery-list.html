@@ -22,21 +22,41 @@
     <hr />
 
     <div id="grocery-list">
-      <p> Thank you for choosing <em>Electronic Grocery List, Ver 1.0</em> for your grocery shopping needs! Click the appropriate button to adjust your list. <br><br>
-      &nbsp;&nbsp;&nbsp;NOTE: PLEASE FOLLOW ALL JAVASCRIPT PROMPTS, <b><u>DO NOT PRESS CANCEL</u></b> AND <b><u>DO NOT PREVENT THE PAGE FROM CREATING ADDITIONAL LOGS</b></u>!!<br><br></p>
+      <p> Thank you for choosing <em>Electronic Grocery List, Ver 1.0</em> for your grocery shopping needs! Click the appropriate button to adjust your list. <br></p>
+      &nbsp;&nbsp;&nbsp;
+
+      <ul>
+        <li>To add an item, enter item name and quanity/price . </li>
+          <ul><li>If no quantity/price is specified, the item will default to 1 and 0.00 respectively</li></ul>
+        <li>The remove an item, write desired item then click the 'Remove Item' button</li>
+        <li><u>Quantities</u>, <u>prices per item</u>, and <u>checked</u> status each adjust based off the current item entered into the text form!</li>
+      </ul>
+      <br>
 
 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <form action="" method="get">
+
+      Item:<input type="text" id="item" />
+      Quantity:<input type="text" id="quantity" value=1 onkeypress="return restrictCharacters(this, event, digitsOnly);"/>
+      Price per Item:<input type="text" id="price" value=0.00 onkeypress="return restrictCharacters(this, event, integerOnly);" /><br>
+
+      </form>
 
       <button id='addItem' name='addItem' onclick='addItem();'>Add Item</button>
 
       <button id='removeItem' name='removeItem' onclick='removeItem();'>Remove Item</button>
 
-      <button id='adjustQuant' name='adjustQuant' onclick='adjustQuantity();'>Adjust Quantity</button>
+      <button id='adjustQuant' name='adjustQuant' onclick='adjustQuantity();' ">Adjust Quantity</button>
 
-      <button id='adjustPrice'  name='adjustPrice' onclick='adjustPrice();'>Adjust Price per Item</button>
+      <button id='adjustPrice'  name='adjustPrice' onclick='adjustPrice();' ">Adjust Price per Item</button>
 
-      <button id='markItem' name='markItem' onclick='markItem();'>Check Item Off List</button>
+      <button id='markItem' name='markItem' onclick='markItem();'>Check Item Off List</button><br><br>
 
+
+      <h4 id='error'>
+        <!-- Error will write here-->
+      </h4>
       <h3><u>YOUR LIST</u></h3><br>
         <table id='grocery-table'>
           <tr>
