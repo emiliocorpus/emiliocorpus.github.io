@@ -4,6 +4,7 @@
   <title>Class Methods</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="icon" type="image/ico" href="../imgs/favicon.ico"/>
   <!--In the CSS challenge you will need to link
   to the CSS stylesheet.
   The link has been left blank for now -->
@@ -13,11 +14,11 @@
   <div class="header2">LEARNING TO PROGRAM FROM EMILIO'S EYES</div>
 
   </div>
-  <div class="menu" align="right"><br>
+  <div class="menu">
     <center><table class="tablemenu">
       <tr>
          <td class="menu-home"><a href="../index.html">.HOME</a></td>
-          <td class="menu-aboutme"><a href="../aboutme.html">.ABOUT ME</a></td>
+          <td class="menu-aboutme"><a href="../index.html#aboutme">.ABOUT ME</a></td>
           <td class="menu-blog"><a href="blog.html">.BLOGS</a></td>
           <td class="menu-portfolio"><a href="../projects/index.html">.PORTFOLIO</a></td>
           <td class="menu-credits"><a href="../credits.html">.CREDITS</a></td>
@@ -32,13 +33,13 @@
 <br>
 <br>
 
-<div class="blog-text"><br>
+<div class="blog-text" ><br>
 
     <br>
-    <font size="8px">BLOG 10:Class Methods</font><br>
+    <font size="8px" id='non-justify'>BLOG 10:Class Methods</font><br>
     <font size="6px">SATURDAY, 6/6/2015</font>
     <br><br>
-    <font size="3px">
+    <font size="3px"><div id='justify'>
       So last week I talked about what it means to be a "Class" in Ruby, and went through an example (albeit small and simple). Today I'll be doing the same, but with more emphasis on the methods that can be created in a Class. Like last time, let' start with an example!<br><br>
       So if you remember, last time we created a class called "Favorites", which had 2 methods, one that was able to return a list of your favorite items, as well as a method that can add a category/item to the list. If you remember, we used <code>attr_reader</code> to create a "reader" method that is able to return a collection of the favorite_items. Lets add a few more methods, specifically a method that checks to see if you have a category and removes it if you do. Here is what the class lookes like before adding any more methods.
       <br><br>
@@ -115,7 +116,7 @@
 
 
 
-
+    </div>
     </font>
 
 

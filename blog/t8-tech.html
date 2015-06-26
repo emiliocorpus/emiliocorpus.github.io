@@ -4,17 +4,18 @@
   <title>Regular Expressions</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="icon" type="image/ico" href="../imgs/favicon.ico"/>
 </head>
 <body background="../imgs/golden_gate_bridge.jpg">
-  <div class="header">A JOURNEY INTO THE RABBIT HOLE<br>
+  <div class="header">A JOURNEY INTO THE RABBIT<br> HOLE<br>
   <div class="header2">LEARNING TO PROGRAM FROM EMILIO'S EYES</div>
 
   </div>
-  <div class="menu" align="right"><br>
+  <div class="menu">
     <center><table class="tablemenu">
       <tr>
          <td class="menu-home"><a href="../index.html">.HOME</a></td>
-          <td class="menu-aboutme"><a href="../aboutme.html">.ABOUT ME</a></td>
+          <td class="menu-aboutme"><a href="../index.html#aboutme">.ABOUT ME</a></td>
           <td class="menu-blog"><a href="blog.html">.BLOGS</a></td>
           <td class="menu-portfolio"><a href="../projects/index.html">.PORTFOLIO</a></td>
           <td class="menu-credits"><a href="../credits.html">.CREDITS</a></td>
@@ -35,7 +36,7 @@
     <font size="8px">BLOG 14: An Intro to Regular Expressions</font></a><br>
     <font size="6px">SUNDAY, 6/21/2015</font>
     <br>
-    <font size="3px">
+    <font size="3px"><div id='justify'>
       <br>
       As defined by the <a href="http://ruby-doc.org/core-2.2.0/Regexp.html">ruby-doc.org</a> resource site, regular expressions are patterns which describe the contents of a string. It is a class/object provided to many different programming languages. It allows a programmer to change certain values of strings or find values based on if the string has those specified patterns. In this tutorial we will use Ruby to illustrate these concepts.<br><br>
       A regular expression pattern can be composed of simple characters. It can look like <code>/abc123/</code> or <code>/Emilio is a cool guy/</code>. In Ruby, there is a <code>Regexp</code> class. You can create a new <code>Regexp</code> by using the <code>/reg exp in here/</code> and <code>%r{reg exp in here}</code>, or the <code>Regexp.new</code> literal constructor.<br><br>
@@ -133,7 +134,7 @@
       <br><br>
       If you noticed, the name "Igor" did not get selected even though it has a "g" in its string. Regular expressions take case into account. If we had used <code>/[GgZ]/</code> then "Igor" would have been in the returned array. This method makes looking/checking for certain string values much easier. <br><br>
       Like I said earlier, I highly suggest looking through <a href="http://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm">this</a> resource. There is still a lot of syntax to learn, but this website is a good resource to fall back on if you even need more review. I am still learning about the topic myself and will probably learn much more about RegEx through different languages! Until next time, cheers!
-
+    </div>
     </font>
 
 

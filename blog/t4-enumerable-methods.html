@@ -4,6 +4,7 @@
   <title>Enumerable Methods</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="icon" type="image/ico" href="../imgs/favicon.ico"/>
   <!--In the CSS challenge you will need to link
   to the CSS stylesheet.
   The link has been left blank for now -->
@@ -13,11 +14,11 @@
   <div class="header2">LEARNING TO PROGRAM FROM EMILIO'S EYES</div>
 
   </div>
-  <div class="menu" align="right"><br>
+  <div class="menu">
     <center><table class="tablemenu">
       <tr>
          <td class="menu-home"><a href="../index.html">.HOME</a></td>
-          <td class="menu-aboutme"><a href="../aboutme.html">.ABOUT ME</a></td>
+          <td class="menu-aboutme"><a href="../index.html#aboutme">.ABOUT ME</a></td>
           <td class="menu-blog"><a href="blog.html">.BLOGS</a></td>
           <td class="menu-portfolio"><a href="../projects/index.html">.PORTFOLIO</a></td>
           <td class="menu-credits"><a href="../credits.html">.CREDITS</a></td>
@@ -35,10 +36,10 @@
 <div class="blog-text"><br>
 
     <br>
-    <font size="8px">BLOG 6: Enumerable Methods, #map</font></a><br>
+    <font size="8px" id='non-justify'>BLOG 6: Enumerable Methods, #map</font></a><br>
     <font size="6px">SUNDAY, 5/24/2015</font>
     <br><br>
-    <font size="3px">
+    <font size="3px"><div id='justify'>
       If you are like me, someone relatively new to Ruby (yet alone the coding world), there is a lot to take in. Having recently started DevBootcamp, I have been presented many challenges and exercises regarding strings, arrays and most recently hashes. Over the last few weeks I have gotten more familiar with these types of objects, and I now have a steady foundation of knowledge on collections. However, any foundation can be fortified, and today we will go through Enumerables and specifically look at one method called #map.<br><br>
       <b>Enumerable</b> is a module. It offers a large collection of methods that are quite helpful in handling data collections, like <code>Hash</code> and <code>Array</code>. Say you have the following:
       <br><br>
@@ -69,6 +70,7 @@
       </code><br>
       our new scores!<br><br>
       This method makes our lives so much easier in terms of manipulating different data collections! This is all thanks to the module Enumerable! Here is a link to <a href='http://ruby-doc.org/core-2.2.0/Enumerable.html'>Enumerables</a>. There you will find all other Enumerable methods. I recommend looking at the the <code>.each</code> method, which is actually quite integral in the defining proceses of all other Enumerable methods. <code>.each</code> is what made <code>.map</code> go through every item in the object!
+    </div>
     </font>
 </div>
 

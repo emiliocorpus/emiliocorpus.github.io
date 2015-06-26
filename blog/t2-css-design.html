@@ -4,6 +4,7 @@
   <title>CSS Design</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+  <link rel="icon" type="image/ico" href="../imgs/favicon.ico"/>
   <!--In the CSS challenge you will need to link
   to the CSS stylesheet.
   The link has been left blank for now -->
@@ -13,11 +14,11 @@
   <div class="header2">LEARNING TO PROGRAM FROM EMILIO'S EYES</div>
 
   </div>
-  <div class="menu" align="right"><br>
+  <div class="menu">
     <center><table class="tablemenu">
       <tr>
            <td class="menu-home"><a href="../index.html">.HOME</a></td>
-          <td class="menu-aboutme"><a href="../aboutme.html">.ABOUT ME</a></td>
+          <td class="menu-aboutme"><a href="../index.html#aboutme">.ABOUT ME</a></td>
           <td class="menu-blog"><a href="blog.html">.BLOGS</a></td>
           <td class="menu-portfolio"><a href="../projects/index.html">.PORTFOLIO</a></td>
           <td class="menu-credits"><a href="../credits.html">.CREDITS</a></td>
@@ -36,11 +37,11 @@
 
     <br>
 
-    <font size="8px">BLOG 3: CSS Design</font></a><br>
+    <font size="8px" id='non-justify'>BLOG 3: CSS Design</font></a><br>
 
     <font size="6px">SUNDAY, 5/10/2015</font>
     <br>
-    <font size="3px">
+    <font size="3px"><div id='justify'>
       <p>
     What is the difference between <strong>absolute</strong>, <strong>relative</strong>, and <strong>fixed positioning</strong>? <br>
     <ul>
@@ -58,8 +59,8 @@
         <p>
           With fixed positioning, elements are completely indepdent of everything else on teh web page. Regardless of any parents, a fixed position element will always be positioned base on the browswer window. This is the fixed scroller that people see on some pages.<br></li><p>
 
-    </ul>
-
+    </ul></div>
+  </font>
   </div>
 
   <br>
