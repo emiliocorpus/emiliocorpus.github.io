@@ -34,7 +34,7 @@ var addItem = function() {
 var removeItem = function(){
 
   if (!document.getElementById(item.value)) {
-    document.getElementById('error').innerHTML = 'Cannot remove item, item does not exist';
+    document.getElementById('error').innerHTML = 'Cannot remove item, the item provided does not exist';
   }
   else {
     var toBeDeleted = document.getElementById(item.value);
@@ -43,13 +43,14 @@ var removeItem = function(){
     var summedPrice = document.getElementById("price-here");
     summedPrice.innerHTML = totalMinPrice.toFixed(2);
     document.getElementById('error').innerHTML = '';
+    item.value = '';
   }
 };
 
 var adjustQuantity = function() {
 
   if (!document.getElementById(item.value)) {
-    document.getElementById('error').innerHTML = 'Cannot ajust quantity, item does not exist';
+    document.getElementById('error').innerHTML = 'Cannot adjust quantity, the item provided does not exist';
   }
 
   else {
@@ -60,6 +61,7 @@ var adjustQuantity = function() {
 
     var summedPrice = document.getElementById("price-here");
     document.getElementById('error').innerHTML = '';
+    item.value = '';
     if (oldQuant > newQuant) {
       totalMinPrice -= (oldQuant-newQuant)*parseFloat(itemRow[2].innerHTML);
       summedPrice.innerHTML = totalMinPrice.toFixed(2);
@@ -73,7 +75,7 @@ var adjustQuantity = function() {
 
 var adjustPrice = function() {
   if (!document.getElementById(item.value)) {
-    document.getElementById('error').innerHTML = 'Cannot adjust price, item does not exist';
+    document.getElementById('error').innerHTML = 'Cannot adjust price, the item provided does not exist';;
   }
 
   else {
@@ -84,6 +86,7 @@ var adjustPrice = function() {
 
     var summedPrice = document.getElementById("price-here");
     document.getElementById('error').innerHTML = '';
+    item.value = '';
     if (oldPrice > newPrice) {
       totalMinPrice -= (oldPrice-newPrice)*Number(itemRow[1].innerHTML);
       summedPrice.innerHTML = totalMinPrice.toFixed(2);
@@ -97,7 +100,7 @@ var adjustPrice = function() {
 
 var markItem = function() {
   if (!document.getElementById(item.value)) {
-    document.getElementById('error').innerHTML = 'Cannot check item, item does not exist';
+    document.getElementById('error').innerHTML = 'Cannot check item, the item provided does not exist';;
   }
   else {
     var itemRow = document.getElementById(item.value).cells;
@@ -105,6 +108,7 @@ var markItem = function() {
 
     itemRow[3].innerHTML = checked;
     document.getElementById('error').innerHTML = '';
+    item.value = '';
   }
 };
 
